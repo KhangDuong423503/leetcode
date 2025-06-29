@@ -1,12 +1,14 @@
 package com.dhk.leetcode.twopointers;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 // 15. 3Sum
-public class _LC15 {
+// INSIGHTS: Just move pointer if same value to avoid duplicates
+public class LC15 {
     public static void main(String[] args) {
-        int[] nums1 = new int[]{-1,0,1,2,-1,-4};
+        int[] nums1 = new int[]{-1,0,1,2,-1,-4}; // -4, -1, -1, 0, 1, 2
         System.out.println(threeSum(nums1));
         // [[-1,-1,2],[-1,0,1]]
 
@@ -21,6 +23,37 @@ public class _LC15 {
 
     private static List<List<Integer>> threeSum(int[] nums) {
         List<List<Integer>> list = new ArrayList<>();
+
+        // sort array
+        Arrays.sort(nums);
+
+        // iterate through sorted array
+        for (int i = 0; i < nums.length - 2; i++) {
+            // ignore past elements to avoid duplicates
+            if (i > 0 && nums[i] == nums[i - 1]) {
+                continue;
+            }
+            // for each element, use two pointers to find the remaining 2 elements (0 or more potential matches)
+            int left = i + 1;
+            int right = nums.length - 1;
+            while (left < right) {
+                int sum = nums[i] + nums[left] + nums[right];
+                if (sum == 0) {
+                    list.add(Arrays.asList(nums[i], nums[left], nums[right]));
+                    // ignore past elements to avoid duplicates
+                    do {
+                        left++;
+                    } while (left < right && nums[left] == nums[left - 1]);
+                    do {
+                        right--;
+                    } while (left < right && nums[right] == nums[right + 1]);
+                } else if (sum > 0) {
+                    right--;
+                } else {
+                    left++;
+                }
+            }
+        }
 
         return list;
     }
