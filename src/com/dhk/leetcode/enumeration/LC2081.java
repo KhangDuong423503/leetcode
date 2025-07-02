@@ -1,4 +1,4 @@
-package com.dhk.leetcode;
+package com.dhk.leetcode.enumeration;
 
 // 2081. Sum of k-Mirror Numbers
 // INSIGHTS: just pre-compute everything LOL

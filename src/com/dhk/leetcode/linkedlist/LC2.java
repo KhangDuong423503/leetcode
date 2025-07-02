@@ -1,4 +1,4 @@
-package com.dhk.leetcode;
+package com.dhk.leetcode.linkedlist;
 
 // 2. Add Two Numbers
 // INSIGHTS: process one pair of nodes at a time to avoid number overflow, carry leftover to the next pair of nodes

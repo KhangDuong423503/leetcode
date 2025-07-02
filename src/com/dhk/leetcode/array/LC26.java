@@ -1,4 +1,4 @@
-package com.dhk.leetcode;
+package com.dhk.leetcode.array;
 
 import java.util.Arrays;
 

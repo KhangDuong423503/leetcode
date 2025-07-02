@@ -1,4 +1,4 @@
-package com.dhk.leetcode;
+package com.dhk.leetcode.string;
 
 // 3443. Maximum Manhattan Distance After K Changes
 // find one-pass alg

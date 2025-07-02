@@ -1,4 +1,4 @@
-package com.dhk.leetcode;
+package com.dhk.leetcode.array;
 
 // 2294. Partition Array Such That Maximum Difference Is K
 // find better sort alg?
